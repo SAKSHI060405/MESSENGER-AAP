@@ -1,5 +1,5 @@
 console.log("script loaded!");
-const socket = io('http://localhost:8000');
+const socket = io('https://convo-z-server.onrender.com/');
 socket.on('connect', () => {
     console.log("Socket Connected",socket.id);
 });
