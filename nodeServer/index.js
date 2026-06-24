@@ -1,13 +1,20 @@
-//node server which will handle socket io connections
-const io = require("socket.io")(8000, {
+const express = require("express");
+const http = require("http");
+const { Server } = require("socket.io");
+
+const app = express();
+const server = http.createServer(app);
+
+const io = new Server(server, {
     cors: {
         origin: "*",
         methods: ["GET", "POST"]
     }
 });
-console.log("Socket server running on port 8000");
 
-const users = {};
+const PORT = process.env.PORT || 8000;
+
+console.log("Socket server starting...");
 
 io.on('connection', socket => {
 
@@ -27,10 +34,14 @@ io.on('connection', socket => {
 
     });
 
-    socket.on('disconnect',message => {
+    socket.on('disconnect', () => {
 
         socket.broadcast.emit('left', socket.username);
 
     });
 
+});
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
