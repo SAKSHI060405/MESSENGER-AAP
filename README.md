@@ -1,6 +1,6 @@
 # 💬 Convo-Z
 
-A modern real-time messaging application built using **Socket.IO**, **Node.js**, **HTML**, **CSS**, and **JavaScript**. Convo-Z enables users to communicate instantly through a clean and responsive chat interface.
+A modern real-time messaging application built using **Socket.IO**, **Node.js**, **HTML**, **CSS**, and **JavaScript**. Convo-Z enables users to communicate instantly through a clean and responsive chat interface
 
 ---
 
